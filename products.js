@@ -88,132 +88,121 @@ const products = [
 ];
 
 
-let higiene = document.querySelector(".products-section")
+function addProductsFruits(list) {
+  let ul = document.querySelector(".fruits")
 
-higiene.insertAdjacentHTML("afterbegin", `
-    <h1>Higiene</h1>
-      <main class="products-content hygiene">
-        <ul>
-          <li class="product">
-            <img src="./img/products/product_9.svg" alt="" title="" class="product-img" />
-            <main class="product-main">
-              <h1 class="product-title">Sabonete</h1>
-              <h5 class="product-category">Higiene</h5>
-              <strong class="product-price">R$ 8.99</strong>
-            </main>
-          </li>
-          <li class="product">
-            <img src="./img/products/product_10.svg" alt="" title="" class="product-img" />
-            <main class="product-main">
-              <h1 class="product-title">Detergente</h1>
-              <h5 class="product-category">Higiene</h5>
-              <strong class="product-price">R$ 8.99</strong>
-            </main>
-          </li>
-          <li class="product">
-            <img src="./img/products/product_11.svg" alt="" title="" class="product-img" />
-            <main class="product-main">
-              <h1 class="product-title">Limpa superfícies</h1>
-              <h5 class="product-category">Higiene</h5>
-              <strong class="product-price">R$ 8.99</strong>
-            </main>
-          </li>
-          <li class="product">
-            <img src="./img/products/no-img.svg" alt="" title="" class="product-img" />
-            <main class="product-main">
-              <h1 class="product-title">Lustra Móveis</h1>
-              <h5 class="product-category">Higiene</h5>
-              <strong class="product-price">R$ 8.99</strong>
-            </main>
-          </li>
-        </ul>
-      </main>
-    </section>
-  </main>
-`)
+  for (let i = 0; i < list.length; i++) {
+    if (list[i].category == "Frutas") {
+
+      let li = document.createElement("li")
+      let img = document.createElement("img")
+      let main = document.createElement("main")
+      let h1 = document.createElement("h1")
+      let h5 = document.createElement("h5")
+      let strong = document.createElement("strong")
+
+      li.classList.add("product")
+      img.classList.add("product-img")
+      main.classList.add("product-main")
+      h1.classList.add("product-title")
+      h5.classList.add("product-category")
+      strong.classList.add("product-price")
+      
+      img.src = list[i].image
+      if (list[i].image == undefined) {
+        img.src = "./img/products/no-img.svg"
+      }
+      else {
+        img.src = list[i].image
+      }
+      h1.innerText = list[i].title
+      h5.innerText = list[i].category
+      strong.innerText = list[i].price
+
+      ul.appendChild(li)
+      li.append(img, main)
+      main.append(h1, h5, strong)
+    }
+  }
+}
+addProductsFruits(products)
 
 
-let drinks = document.querySelector(".products-section")
+function addProductsDrinks(list) {
+  let ul = document.querySelector(".drinks")
 
-drinks.insertAdjacentHTML("afterbegin", `
-    <h1>Bebidas</h1>
-      <main class="products-content drinks">
-        <ul>
-          <li class="product">
-            <img src="./img/products/no-img.svg" alt="" title="" class="product-img" />
-            <main class="product-main">
-              <h1 class="product-title">Refrigerante</h1>
-              <h5 class="product-category">Bebidas</h5>
-              <strong class="product-price">R$ 8.99</strong>
-            </main>
-          </li>
-          <li class="product">
-            <img src="./img/products/product_6.svg" alt="" title="" class="product-img" />
-            <main class="product-main">
-              <h1 class="product-title">Vinho</h1>
-              <h5 class="product-category">Bebidas</h5>
-              <strong class="product-price">R$ 8.99</strong>
-            </main>
-          </li>
-          <li class="product">
-            <img src="./img/products/no-img.svg" alt="" title="" class="product-img" />
-            <main class="product-main">
-              <h1 class="product-title">Água Tônica</h1>
-              <h5 class="product-category">Bebidas</h5>
-              <strong class="product-price">R$ 8.99</strong>
-            </main>
-          </li>
-          <li class="product">
-            <img src="./img/products/product_8.svg" alt="" title="" class="product-img" />
-            <main class="product-main">
-              <h1 class="product-title">Água de coco</h1>
-              <h5 class="product-category">Bebidas</h5>
-              <strong class="product-price">R$ 8.99</strong>
-            </main>
-          </li>
-        </ul>
-      </main>
-`)
+  for (let i = 0; i < list.length; i++) {
+    if (list[i].category == "Bebidas") {
+
+      let li = document.createElement("li")
+      let img = document.createElement("img")
+      let main = document.createElement("main")
+      let h1 = document.createElement("h1")
+      let h5 = document.createElement("h5")
+      let strong = document.createElement("strong")
+
+      li.classList.add("product")
+      img.classList.add("product-img")
+      main.classList.add("product-main")
+      h1.classList.add("product-title")
+      h5.classList.add("product-category")
+      strong.classList.add("product-price")
+      
+      img.src = list[i].image
+      if (list[i].image == undefined) {
+        img.src = "./img/products/no-img.svg"
+      }
+      else {
+        img.src = list[i].image
+      }
+      h1.innerText = list[i].title
+      h5.innerText = list[i].category
+      strong.innerText = list[i].price
+
+      ul.appendChild(li)
+      li.append(img, main)
+      main.append(h1, h5, strong)
+    }
+  }
+}
+addProductsDrinks(products)
 
 
-let frutas = document.querySelector(".products-section")
+function addProductsHygiene(list) {
+  let ul = document.querySelector(".hygiene")
 
-frutas.insertAdjacentHTML("afterbegin", `
-    <h1>Frutas</h1>
-      <main class="products-content fruits">
-        <ul>
-          <li class="product">
-            <img src="./img/products/no-img.svg" alt="" title="" class="product-img" />
-            <main class="product-main">
-              <h1 class="product-title">Uva Crimson</h1>
-              <h5 class="product-category">Frutas</h5>
-              <strong class="product-price">R$ 8.99</strong>
-            </main>
-          </li>
-          <li class="product">
-            <img src="./img/products/product_2.svg" alt="" title="" class="product-img" />
-            <main class="product-main">
-              <h1 class="product-title">Banana</h1>
-              <h5 class="product-category">Frutas</h5>
-              <strong class="product-price">R$ 5.69</strong>
-            </main>
-          </li>
-          <li class="product">
-            <img src="./img/products/product_3.svg" alt="" title="" class="product-img" />
-            <main class="product-main">
-              <h1 class="product-title">Mamão</h1>
-              <h5 class="product-category">Frutas</h5>
-              <strong class="product-price">R$ 4.99</strong>
-            </main>
-          </li>
-          <li class="product">
-            <img src="./img/products/product_4.svg" alt="" title="" class="product-img" />
-            <main class="product-main">
-              <h1 class="product-title">Maçã</h1>
-              <h5 class="product-category">Frutas</h5>
-              <strong class="product-price">R$ 9.2</strong>
-            </main>
-          </li>
-        </ul>
-      </main>
-`)
+  for (let i = 0; i < list.length; i++) {
+    if (list[i].category == "Higiene") {
+
+      let li = document.createElement("li")
+      let img = document.createElement("img")
+      let main = document.createElement("main")
+      let h1 = document.createElement("h1")
+      let h5 = document.createElement("h5")
+      let strong = document.createElement("strong")
+
+      li.classList.add("product")
+      img.classList.add("product-img")
+      main.classList.add("product-main")
+      h1.classList.add("product-title")
+      h5.classList.add("product-category")
+      strong.classList.add("product-price")
+      
+      img.src = list[i].image
+      if (list[i].image == undefined) {
+        img.src = "./img/products/no-img.svg"
+      }
+      else {
+        img.src = list[i].image
+      }
+      h1.innerText = list[i].title
+      h5.innerText = list[i].category
+      strong.innerText = list[i].price
+
+      ul.appendChild(li)
+      li.append(img, main)
+      main.append(h1, h5, strong)
+    }
+  }
+}
+addProductsHygiene(products)
